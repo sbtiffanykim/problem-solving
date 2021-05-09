@@ -5,13 +5,14 @@ n, m = map(int, input().split())
 # 그래프 입력 받기
 graph = []
 for i in range(n):
-    graph.append(list(map(int, input()))
+    graph.append(list(map(int, input())))
 
 # 이동 방향 정의(상,하,좌,우)
 dx = [-1, 1, 0, 0]
 dy = [0, 0, -1, 1]
 # 방문기록 처리를 위한 list 초기화
 visited = [[0] * m for _ in range(n)]
+
 
 def bfs(x, y):
     # 큐 구현
@@ -30,8 +31,9 @@ def bfs(x, y):
             # # 벽인 경우 무시
             # if graph[nx][ny] == 0: continue
             # 이미 방문한 노드일 경우에 무시
-            if visited[nx][ny]: continue
-            
+            if visited[nx][ny]:
+                continue
+
             # 방문하지 않았다면 큐에 넣고 방문처리를 함
             queue.append((nx, ny))
             visited[nx, ny] = 1
