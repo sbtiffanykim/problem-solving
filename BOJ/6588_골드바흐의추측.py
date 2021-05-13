@@ -1,4 +1,8 @@
 import math
+import sys
+import time
+
+input = sys.stdin.readline
 
 
 def prime_num(n):
@@ -13,7 +17,7 @@ def prime_num(n):
 
 
 def goldbach_conjecture(arr):
-    for i in range(3, len(arr) + 1):
+    for i in range(3, len(arr) + 1, 2):
         if arr[i]:
             t = n - i
             if arr[t]:
@@ -23,8 +27,11 @@ def goldbach_conjecture(arr):
 
 
 while True:
+    start_time = time.time()
     n = int(input())
     if n == 0:
         break
     arr = prime_num(n)
     goldbach_conjecture(arr)
+    end_time = time.time()
+    print(end_time - start_time)
