@@ -1,5 +1,7 @@
 # 선택 정렬
 # 매번 가장 작은 것을 선택하기
+# time complexity: O(n^2)
+
 array = [7, 5, 9, 0, 3, 1, 6, 2, 4, 8]
 
 for i in range(len(array)):
