@@ -24,7 +24,7 @@ def quick_sort(array, start, end):
             left += 1
         # array의 시작까지 이동하면서 pivot보다 작은 숫자 찾기
         while right > start and array[pivot] <= array[right]:
-            right += 1
+            right -= 1
         # 만약 엇갈렸다면 pivot과 가장 작은 값(right)를 swap
         if right > left:
             array[right], array[pivot] = array[pivot], array[right]
