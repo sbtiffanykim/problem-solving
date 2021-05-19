@@ -10,7 +10,9 @@ def binary_search(array, target, start, end):
             end = mid - 1
         # 중간점의 값이 target보다 작으면 오른쪽 확인
         else:
-            end = mid + 1
+            start = mid + 1
+    return None
+
 
 # 원소의 개수(n)과 찾고자 하는 문자열(target) 입력받기
 n, target = list(map(int, input().split()))
