@@ -1,6 +1,6 @@
 # Problem Solving
 
-The idea is to practice solving algorithm problems in
+The idea is to practice solving algorithm problems in python
 
 ## Progress
 
