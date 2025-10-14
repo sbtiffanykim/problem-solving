@@ -4,13 +4,12 @@ class Solution:
         opened_p = ["(", "{", "["]
         stack = list()
 
-        if s[0] not in opened_p:  # deal with the edge case
-            return False
-
         for char in s:
             if char in opened_p:
                 stack.append(char)
-            elif stack and stack[-1] == p_map[char]:
+            elif not stack or stack[-1] != p_map[char]:
+                return False
+            else:
                 stack.pop()
         
         return True if not stack else False
