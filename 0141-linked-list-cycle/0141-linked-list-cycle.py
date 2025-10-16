@@ -10,7 +10,7 @@ class Solution:
         while fast and fast.next:
             fast = fast.next.next
             slow = slow.next
-            if fast and fast.val == slow.val:
+            if fast == slow:  # if the cycle exists
                 return True
         return False
 
