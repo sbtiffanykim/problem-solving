@@ -7,20 +7,14 @@ class Solution:
         if starting_color == color:
             return image  # no need to fill
 
-        queue = deque()
-        queue.append((sr, sc))
-        image[sr][sc] = color
-
-        while queue:
-            x, y = queue.popleft()
-
+        def dfs(x, y):
+            # skip out-of-bounds or different color cells
+            if x < 0 or x >= m or y < 0 or y >= n or image[x][y] != starting_color:
+                return
+            if image[x][y] == starting_color:
+                image[x][y] = color
             for i in range(4):
-                nx = x + dx[i]
-                ny = y + dy[i]
-                # skip cells that are out of bounds, visited, or not the starting color
-                if nx < 0 or nx >= m or ny < 0 or ny >= n or image[nx][ny] != starting_color:
-                    continue
-                image[nx][ny] = color
-                queue.append((nx, ny))
-        
+                dfs(x + dx[i], y + dy[i])
+            
+        dfs(sr, sc)
         return image
